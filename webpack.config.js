@@ -44,7 +44,9 @@ module.exports = (_, argv) => ({
       name: "mf_ticket_cancel",
       filename: "remoteEntry.js",
       remotes: {},
-      exposes: {},
+      exposes: {
+        "./TicketCancel": "./src/components/TicketCancel.jsx",
+      },
       shared: {
         ...deps,
         react: {

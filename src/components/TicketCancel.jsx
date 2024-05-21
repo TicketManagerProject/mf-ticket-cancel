@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Card, Button, Form, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { BiTrash } from 'react-icons/bi';
 import "../index.css";
 
 const InfoUser = () => {
@@ -107,16 +108,23 @@ const InfoUser = () => {
                 </Button>
               </div>
               {/*Mensaje */}
-              {success && (
-                <div className="text-center mt-3" style={{ color: "green" }}>
-                  Appointment created successfully!
-                  <div>Ticket Number: {appointments[appointments.length - 1].room}</div>
-                  <div>Date: {new Date(appointments[appointments.length - 1].dateTime).toLocaleDateString()}</div>
-                  <div>Time: {new Date(appointments[appointments.length - 1].dateTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
-                  {/* Add the location based on the room */}
-                  <div>Location: {appointments[appointments.length - 1].room === "room1" ? "Office10" : "Office14"}</div>
-                </div>
-              )}
+              {
+                success && (
+                  <>
+                    <div className="text-center mt-3" style={{ color: "green" }}>
+                      A shift has been assigned to your name on the<br/>selected date and time.  With ticket AUU123
+                    </div>
+                    <div className="text-center mt-3">
+                      <Col sm={12} className="d-flex justify-content-center align-items-center">
+                        <Form.Control required type="text" placeholder="AUU123         09-05-24        1:30 a.m        Office05" className="input-bloqueado" disabled />
+                        <Button variant="link" style={{ marginLeft: '10px' }}>
+                          <BiTrash style={{ color: 'red' }} />
+                        </Button>
+                      </Col>
+                    </div>
+                  </>
+                )
+              }
             </Form>
           </div>
         </Card.Body>
