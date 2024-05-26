@@ -1,16 +1,16 @@
 .container {
-  width: 65%;
+  width: 60%;
 }
 
 h2 {
   color: #23294b;
   text-align: center;
-  margin-bottom: 20px; /* Aumenta el espacio entre el título y la tabla */
+  margin-bottom: 18px; /* Aumenta el espacio entre el título y la tabla */
 }
 
 .table-container {
-  width: 140%; /* Ancho de la tabla */
-  height: 70vh; /* Alto de la tabla */
+  width: 110%; /* Ancho de la tabla */
+  height: 80vh; /* Alto de la tabla */
   max-height: 70vh;
   overflow-y: auto;
   /* Removiendo bordes adicionales */

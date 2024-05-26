@@ -8,29 +8,27 @@ const InfoUser = () => {
   const [validated, setValidated] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState("");
   const [dateTime, setDateTime] = useState("");
-  const [appointments, setAppointments] = useState([]); // Array para almacenar los resultados
-  const [success, setSuccess] = useState(false); // Estado para mensaje de éxito
+  const [appointments, setAppointments] = useState([]);
+  const [success, setSuccess] = useState(false);
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
-    event.preventDefault(); // Evitar el comportamiento predeterminado del formulario
+    event.preventDefault(); 
 
     if (form.checkValidity() === false) {
       event.stopPropagation();
       setValidated(true);
     } else {
-      // Almacenar los valores en el array
       const newAppointment = {
         room: selectedRoom,
         dateTime: dateTime,
       };
       setAppointments([...appointments, newAppointment]);
 
-      // Resetear el formulario y los estados
       setSelectedRoom("");
       setDateTime("");
       setValidated(false);
-      setSuccess(true); // Mostrar mensaje de éxito
+      setSuccess(true);
 
       console.log("New Appointment:", newAppointment);
       console.log("All Appointments:", appointments);
@@ -43,12 +41,12 @@ const InfoUser = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        minHeight: "100vh",
+        minHeight: "90vh",
       }}
     >
       <Card
         style={{
-          width: "45rem",
+          width: "35rem",
           backgroundColor: "#ECEBF4",
           borderRadius: "20px",
         }}
